@@ -1,11 +1,12 @@
 ﻿using System;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace FileSystem
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             DriveInfo[] driveInfo = DriveInfo.GetDrives();
 
@@ -39,7 +40,7 @@ namespace FileSystem
             var sw = new StreamWriter(fileStream);
             for (int i = 1; i <= 10; i++)
             {
-                sw.WriteLine($"This is line number: {i}");
+                await sw.WriteLineAsync($"This is line number: {i}");
             }
             sw.Close();
 
