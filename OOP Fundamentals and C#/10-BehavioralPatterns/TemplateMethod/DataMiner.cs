@@ -18,12 +18,12 @@ public abstract class DataMiner
     protected abstract void ReadData();
     protected abstract void ParseData();
 
-    protected void AnalyzeData()
+    protected virtual void AnalyzeData()
     {
         Console.WriteLine("Analyzing data....");
     }
 
-    protected void SendReport()
+    protected virtual void SendReport()
     {
         Console.WriteLine("Sending report....");
     }
