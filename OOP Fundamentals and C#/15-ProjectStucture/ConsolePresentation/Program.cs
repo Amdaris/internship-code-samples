@@ -1,68 +1,47 @@
-﻿using Application;
-using Application.Queries.GetProductsQuery;
-using Domain;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Application;
+using Application.Orders.Commands.CreateOrder;
+using Application.Orders.Queries.GetOrdersList;
+using Application.Products.Commands.CreateProduct;
+using Application.Products.Queries.GetProductsList;
 using Infrastructure;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ConsolePresentation
 {
-    class Program
+    internal class Program
     {
-        static async Task Main(string[] args)
+        private static async Task Main(string[] args)
         {
             var diContainer = new ServiceCollection()
                 .AddMediatR(typeof(IProductRepository))
-                .AddTransient<IProductRepository, InMemoryProductRepository>()
+                .AddScoped<IOrderRepository, InMemoryOrderRepository>()
+                .AddScoped<IProductRepository, InMemoryProductRepository>()
                 .BuildServiceProvider();
 
-            var mediator = diContainer.GetService<IMediator>();
+            var mediator = diContainer.GetRequiredService<IMediator>();
 
-            var products = await mediator.Send(new GetProductsQuery());
-
-            foreach(var p in products)
+            var orderId = await mediator.Send(new CreateOrderCommand
             {
-                Console.WriteLine($"{p.Id} - {p.Name}");
-            }
+                BuyerName = "TheBuyer",
+                OrderItems = new List<OrderItemDto>
+                {
+                    new() { Quantity = 1, Price = 5, ProductName = "Telefon" },
+                    new() { Quantity = 2, Price = 7, ProductName = "TV" }
+                }
+            });
 
-            //IProductRepository productRepository = new InMemoryProductRepository();
-            //var products = productRepository.GetProducts();
+            Console.WriteLine($"Order created with {orderId}");
 
-            //foreach (var p in products)
-            //{
-            //    Console.WriteLine($"I'm seeing a '{p.Name}'");
-            //}
 
-            //var productToOrder = products.FirstOrDefault(p => p.Name == "Laptop");
+            var orders = await mediator.Send(new GetOrdersListQuery());
 
-            //var order = new Order { Id = 10 };
+            var productId = await mediator.Send(new CreateProductCommand { Name = "test", Price = 10 });
+            var products = await mediator.Send(new GetProductsListQuery());
 
-            //IOrderRepository orderRepository = new InMemoryOrderRepository();
-            //orderRepository.CreateOrder(order);
-
-            //Console.WriteLine("Looking at order:");
-            //Console.WriteLine(order);
-
-            //var orderItem = new OrderItem { Id = 1, Product = productToOrder, Quantity = 5 };
-
-            //orderRepository.AddItemToOrder(10, orderItem);
-            //order = orderRepository.GetOrder(10);
-            //Console.WriteLine(order);
-
-            //orderItem.Quantity = 3;
-
-            //orderRepository.Update(10, orderItem);
-            //order = orderRepository.GetOrder(10);
-            //Console.WriteLine(order);
-
-            //orderRepository.DeleteOrderItem(10, 1);
-            //order = orderRepository.GetOrder(10);
-
-            //Console.WriteLine("Final status:");
-            //Console.WriteLine(order);
         }
     }
 }
