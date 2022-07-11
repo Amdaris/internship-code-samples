@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BreakfastSynchronous", "BreakfastSynchronous\BreakfastSynchronous.csproj", "{9FD4C013-C245-415E-AFAC-C9DE18C7541A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BreakfastAsyncBaisc", "BreakfastAsyncBaisc\BreakfastAsyncBaisc.csproj", "{B7BE88B6-1B5A-4DA9-9021-983AFD0B7DDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BreakfastParallel", "BreakfastParallel\BreakfastParallel.csproj", "{2C00DF0F-04E4-4566-ACEE-BB1FB9A43048}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FD4C013-C245-415E-AFAC-C9DE18C7541A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FD4C013-C245-415E-AFAC-C9DE18C7541A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FD4C013-C245-415E-AFAC-C9DE18C7541A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FD4C013-C245-415E-AFAC-C9DE18C7541A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7BE88B6-1B5A-4DA9-9021-983AFD0B7DDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7BE88B6-1B5A-4DA9-9021-983AFD0B7DDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7BE88B6-1B5A-4DA9-9021-983AFD0B7DDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7BE88B6-1B5A-4DA9-9021-983AFD0B7DDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C00DF0F-04E4-4566-ACEE-BB1FB9A43048}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C00DF0F-04E4-4566-ACEE-BB1FB9A43048}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C00DF0F-04E4-4566-ACEE-BB1FB9A43048}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C00DF0F-04E4-4566-ACEE-BB1FB9A43048}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
