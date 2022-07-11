@@ -1,33 +1,38 @@
-﻿using Application;
-using Domain;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Application;
+using Domain;
 
 namespace Infrastructure
 {
     public class InMemoryProductRepository : IProductRepository
     {
-        private List<Product> products;
+        private readonly List<Product> _products;
+
         public InMemoryProductRepository()
         {
-            this.products = new List<Product>
+            _products = new List<Product>
             {
-                new Product { Id = 1, Name = "Frigider", Price = 1000 },
-                new Product { Id = 2, Name = "Telefon", Price = 2500 },
-                new Product { Id = 3, Name = "Laptop", Price = 4000 },
-                new Product { Id = 4, Name = "Televizor", Price = 3000 },
-                new Product { Id = 5, Name = "Aragaz", Price = 1500 },
+                new("Frigider", 1000) { Id = 1 },
+                new("Telefon", 2500) { Id = 2 },
+                new("Laptop", 4000) { Id = 3 }
             };
+        }
+
+        public void CreateProduct(Product product)
+        {
+            product.Id = _products.Count + 1;
+            _products.Add(product);
         }
 
         public Product GetProduct(int id)
         {
-            return products.FirstOrDefault(p => p.Id == id);
+            return _products.FirstOrDefault(p => p.Id == id);
         }
 
         public IEnumerable<Product> GetProducts()
         {
-            return products;
+            return _products;
         }
     }
 }

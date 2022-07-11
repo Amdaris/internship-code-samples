@@ -1,4 +1,5 @@
-﻿using Domain;
+﻿using System.Collections.Generic;
+using Domain;
 
 namespace Application
 {
@@ -9,5 +10,6 @@ namespace Application
         void Update(int orderId, OrderItem item);
         void DeleteOrderItem(int orderId, int orderItemId);
         Order GetOrder(int orderId);
+        IEnumerable<Order> GetOrders();
     }
 }

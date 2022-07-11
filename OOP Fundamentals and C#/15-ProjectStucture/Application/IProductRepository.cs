@@ -1,5 +1,5 @@
-﻿using Domain;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Domain;
 
 namespace Application
 {
@@ -7,5 +7,6 @@ namespace Application
     {
         IEnumerable<Product> GetProducts();
         Product GetProduct(int id);
+        void CreateProduct(Product product);
     }
 }
