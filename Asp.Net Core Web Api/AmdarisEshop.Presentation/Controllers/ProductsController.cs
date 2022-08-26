@@ -114,9 +114,12 @@ namespace AmdarisEshop.Presentation.Controllers
                 ProductId = productId
             };
 
-            await _mediator.Send(command);
+            var product = await _mediator.Send(command);
 
-            return NoContent();
+            if (product == null)
+                return NotFound();
+
+            return Ok(_mapper.Map<ProductGetDto>(product));
         }
 
         [HttpDelete]
@@ -124,9 +127,14 @@ namespace AmdarisEshop.Presentation.Controllers
         public async Task<IActionResult> RemoveCategoryFromProduct(int productId, int categoryId)
         {
             var command = new RemoveCategoryFromProduct { ProductId = productId, CategoryId = categoryId };
-            await _mediator.Send(command);
+            var product = await _mediator.Send(command);
 
-            return NoContent();
+            if (product == null)
+                return NotFound();
+
+            return Ok(_mapper.Map<ProductGetDto>(product));
+
         }
+
     }
 }
