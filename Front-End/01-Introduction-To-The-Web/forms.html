@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Amdaris' Forms Playground">
+  <meta name="Amdaris' Homepage" content="https://amdaris.com">
+  <meta name="description"  content="Intro to HTML Forms">
+  <title>Introduction to HTML Forms</title>
+</head>
+<body>
+
+
+  <form method="POST" style="width: 400px">
+    <fieldset>
+      <legend>Tell us something about yourself</legend>
+      <label for="first_name">
+        First Name
+        <input id="first_name" type="text" name="first_name" placeholder="Your First Name" />
+      </label>
+      <br />
+      <label for="last_name">
+        Last Name
+        <input id="last_name" type="text" name="last_name" placeholder="Your Last Name" />
+      </label>
+      <br />
+      <label for="email">
+        Email Adress
+        <input id="email" type="email" name="email" placeholder="Your Email Address" />
+      </label>
+      <br />
+      <label for="date_of_birth">
+        Date of Birth
+        <input id="date_of_birth" type="date" name="date" />
+      </label>
+      <br />
+      <label for="favorite_sport">
+        Favorite Sport
+        <select id="favorite_sport" name="favorite_sport" placeholder="Your favorite sport">
+          <option value="football">Football</option>
+          <option value="volley">Volley</option>
+          <option value="basketball">Basketball</option>
+          <option value="swimming">Swimming</option>
+          <option selected>None</option>
+        </select>
+      </label>
+      <br />
+      <!-- Equivalent to <input id="submit_button" type="submit" value="Submit" /> -->
+      <button id="submit_button" type="submit">
+        Submit
+      </button>
+    </fieldset>
+  </form>
+
+
+</body>
+</html>
