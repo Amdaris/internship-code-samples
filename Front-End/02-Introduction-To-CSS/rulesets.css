@@ -1,0 +1,50 @@
+h1 {
+  font-size: 32px;
+  color: #3a3a3a;
+}
+
+div.banner {
+  width: 100%;
+}
+
+div.banner p {
+  font-size: 24px;
+  font-weight: 700;
+  color: #4f4f4f;
+}
+
+div.banner p, h1 {
+  text-align: center;
+}
+
+p.red {
+  color: red;
+}
+
+p.bluish {
+  color: blue;
+}
+
+p.purple {
+  color: purple;
+}
+
+/* main {
+  box-sizing: border-box;
+  padding: 20px; /* Short-hand operator */
+  /*
+    Classic operator:
+      padding-top: 20px;
+      padding-right: 20px;
+      padding-bottom: 20px;
+      padding-left: 20px;
+    
+      Short-hand form
+                  t    r    b    l
+      -> padding: 20px 20px 20px 20px;
+
+      Shortest short-hand form
+      -> padding: 20px;
+
+      Talk with Petru and check whether this should be part of the advanced CSS presentation
+  */

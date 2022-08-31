@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding CSS to our Web Page</title>
+
+    <!-- styles.css is in the same directory as this HTML file -->
+    <link rel="stylesheet" href="./styles.css" />
+
+    <style>
+      /* Styles go here... */
+    </style>
+
+  </head>
+
+  <body>
+  
+    <div style="background-color: red"></div>
+    <p style="color: grey">Plain text</p>
+  
+  </body>
+
+</html>
+
+
+
+  <!-- 
+  Specificity of (1, 0, 0, 0) due to use of inline styles
+  <div style="background-color: red"></div>
+
+  <div></div>
+
+  <div class="red-background-div"></div>
+
+  <div id="red-background-div"></div>
+
+  <div id="purple-background-div" class="yellow-background-div"></div>
+
+</body>-->
+
+<!-- 
+    /* Will override previous rule because they have
+      the same specificity of (0, 0, 1)
+      and this one is declared afterward (Order Matters!) */
+    /* Specificity of (0, 0, 1) */
+    div {
+      background-color: yellow;
+    }
+
+    /* Specificity of (0, 1, 0) */
+    .red-background-div {
+      background-color: red;
+    }
+
+    /* Specificity of (1, 0, 0) */
+    #red-background-div {
+      background-color: red;
+    }
+
+    /* Specificity of (0, 1, 0) */
+    .yellow-background-div {
+      background-color: yellow;
+    }
+
+    /* Specificity of (1, 0, 0) */
+    #purple-background-div {
+      background-color: purple;
+    }-->
+</html>

@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 2.5rem 5rem;
+}
+
+form {
+  box-sizing: border-box;
+  padding: 15px;
+  width: 400px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.form-container__header {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+form .form-input-container {
+  margin-bottom: 1.5rem;
+}
+
+form button[type="submit"] {
+  height: 25px;
+  width: 100px;
+  text-align: center;
+}
+
+form label {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+form p.error-message {
+  font-size: 12px;
+  color: red;
+  font-weight: 700;
+  margin-top: 0.4rem;
+}
+
+button[disabled] {
+  cursor: not-allowed;
+}

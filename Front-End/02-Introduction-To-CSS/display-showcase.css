@@ -1,0 +1,33 @@
+section[name="inline display"] p em.inline-element {
+  color: white;
+  background-color: red;
+  padding: 10px;
+}
+
+section[name="inline-block display"] p em.inline-block-element {
+  display: inline-block;
+  color: white;
+  background-color: blue;
+  height: 50px;
+  width: 200px;
+}
+
+section[name="block display"] p em.block-element {
+  display: block;
+  color: white;
+  background-color: purple;
+  height: 50px;
+  width: 200px;
+}
+
+section[name="no display"] p em.no-display-element {
+  display: none;
+}
+
+
+
+
+
+
+
+
