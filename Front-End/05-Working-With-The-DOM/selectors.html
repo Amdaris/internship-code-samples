@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selectors</title>
+</head>
+<body>
+  <script>
+    // Stores all the `div` elements
+    const divElements = document.querySelectorAll('div');
+    
+    // Stores all the `div` elements that have the class of "some-class"
+    const divWithClassElements = document.querySelectorAll('div.some-class');
+
+    // Stores all the elements that have the class of "some-class"
+    const elementsWithClass = document.querySelectorAll('.some-class');
+
+    // Stores the element that has the id of "elm-id", or null if it doesn't exist
+    const elementById = document.querySelector('#elm-id');
+
+    // Stores all of the `input` elements that are of type "text"
+    const textInputElements = document.querySelectorAll('input[type="text"]');
+
+    // Stores all of the `p` elements that are nested within `div` elements
+    const paragraphInsideDivElements = document.querySelectorAll('div p');
+  </script>
+</body>
+</html>

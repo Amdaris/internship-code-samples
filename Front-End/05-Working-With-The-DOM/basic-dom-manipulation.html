@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic DOM Manipulation</title>
+</head>
+<body>
+  <p id="initial-id">Initial Paragraph Content</p>
+
+  <script>
+    // Using .querySelector method available on the
+    // global `document` instance
+    const paragraph = document.querySelector('p');
+
+    // Reassigning the `textContent` property of the
+    // paragraph element
+    paragraph.textContent = 'Modified Paragraph Content';
+
+    // Reassigning the `id` property of the
+    // paragraph element
+    paragraph.id = 'modified-id';
+  </script>
+</body>
+</html>
+
+

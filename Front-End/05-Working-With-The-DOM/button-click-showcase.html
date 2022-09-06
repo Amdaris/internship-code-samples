@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    #container {
+      width: 100vw;
+      height: 120vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    #alert-trigger-btn {
+      width: 200px;
+      height: 30px;
+      border-radius: 6px;
+      background-color: #a0a0a0;
+      border: none;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    #alert-trigger-btn:hover {
+      background-color: #c8c8c8;
+    }
+  </style>
+
+  <title>Events</title>
+</head>
+<body>
+  <div id="container">
+    <button id="alert-trigger-btn">Alert Me</button>
+  </div>
+
+  <script>
+    // Selecting and storing a reference to the button element
+    const alertTriggerBtnElm = document.querySelector('#alert-trigger-btn');
+
+    // Adding a `click` event listener to the button that
+    // triggers a callback which alerts the user every time it's been clicked
+    alertTriggerBtnElm.addEventListener('click', () => {
+      alert('You\'ve clicked the button!');
+    });
+
+    /* elementReference.addEventListener('event', () => {
+      // Code to execute when event is triggered
+    });
+
+    buttonElement.addEventListener('click', () => {
+      alert('You\'ve clicked a button!');
+    }); */
+
+    // Keyboard Events
+    window.addEventListener('keydown', (e) => {
+      // We'll log out the event info
+      console.log(e);
+    });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manipulating Styles</title>
+  </head>
+  <body>
+    <div id="container">
+      <p>This is a paragraph that initially had a black font color.</p>
+      <p>This is another paragraph.</p>
+    </div>
+
+    <script>
+      const containerElm = document.querySelector("#container");
+
+      const containerParagraphsElms = containerElm.querySelectorAll("p");
+
+      containerElm.style.backgroundColor = "red";
+
+      containerParagraphsElms.forEach((paragraphElm) => {
+        paragraphElm.style.color = "white";
+      });
+    </script>
+  </body>
+</html>

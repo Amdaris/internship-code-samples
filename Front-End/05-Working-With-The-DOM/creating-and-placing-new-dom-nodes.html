@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creating And Placing New DOM Nodes</title>
+</head>
+<body>
+  <ul></ul>
+
+  <script>
+    // Storing a reference to the unordered list
+    // element to the `list` variable
+    const list = document.querySelector('ul');
+
+    // Creating a new list item element using the `li` tag
+    // as it appears within the HTML
+    const listItemElement1 = document.createElement('li');
+    
+    // Setting the content of the newly creating list item element
+    listItemElement1.textContent = 'Task 1';
+
+    const listItemElement2 = document.createElement('li');
+    listItemElement2.textContent = 'Task 2';
+
+    // Appending the elements to a parent element§
+    list.appendChild(listItemElement1);
+    list.appendChild(listItemElement2);
+  </script>
+</body>
+</html>
+
+
