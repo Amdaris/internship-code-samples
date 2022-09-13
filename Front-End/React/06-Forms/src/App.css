@@ -1,0 +1,70 @@
+.App {
+  text-align: center;
+}
+
+.email-form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 100px;
+  margin: 5px auto 0;
+  text-align: left;
+}
+
+.email-form button {
+  width: fit-content;
+  margin-top: auto;
+}
+
+.validation-error {
+  color: red;
+}
+
+.name-submission-form {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  justify-content: flex-start;
+  text-align: left;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+
+.name-submission-form label, .name-submission-form input {
+  margin-bottom: 7.5px;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
