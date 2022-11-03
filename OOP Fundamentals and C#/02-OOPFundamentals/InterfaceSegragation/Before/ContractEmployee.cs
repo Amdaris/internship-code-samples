@@ -1,6 +1,6 @@
 ﻿namespace Before;
 
-public class ContractEmployee
+public class ContractEmployee : IWorker
 {
     public string ID { get; set; }
     public string Name { get; set; }
