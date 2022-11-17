@@ -1,8 +1,8 @@
-﻿namespace Factory
+﻿namespace Factory.FactoryMethod
 {
-    public class ShipFactory : ITransporterFactory
+    public class ShipFactory : ITransportFactory
     {
-        public ITransporter CreateTransporter(float capacity, string name)
+        public ITransport CreateTransport(float capacity, string name)
         {
             return new Ship
             {

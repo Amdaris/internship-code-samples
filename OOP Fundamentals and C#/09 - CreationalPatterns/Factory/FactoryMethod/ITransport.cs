@@ -1,6 +1,6 @@
-﻿namespace Factory
+﻿namespace Factory.FactoryMethod
 {
-    public interface ITransporter
+    public interface ITransport
     {
         string Name { get; set; }
         float Capacity { get; set; }

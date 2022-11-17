@@ -15,9 +15,10 @@
             internal static readonly StaticConstructorSingletonNested _instance = new StaticConstructorSingletonNested();
             static Nested()
             {
+                System.Console.WriteLine("StaticConstructorSingletonNested initialized..");
             }
         }
 
-        public StaticConstructorSingletonNested Instance { get { return Nested._instance; } }
+        public static StaticConstructorSingletonNested Instance { get { return Nested._instance; } }
     }
 }

@@ -5,9 +5,11 @@ namespace Singleton.SingletonImplementations
     public class NaiveSingleton
     {
         private static NaiveSingleton _instance;
+        private static int _counter;
         private NaiveSingleton()
         {
-            Console.WriteLine("Constructor called");
+            _counter++;
+            Console.WriteLine($"Constructor called for {_counter} time(s).");
         }
         public static NaiveSingleton Instance
         { 

@@ -13,12 +13,18 @@ namespace Singleton
             //TestMultipleThreadsNaiveApproach();
             //TestMultipleThreadsThreadSaveSingleton();
             //TestMultipleThreadsStaticConstructorSingleton();
+
+            var instance = StaticConstructorSingletonNested.Instance;
+
+
+            Console.ReadLine();
         }
 
         public static void TestUniqueInstanceNaiveSingleton()
         {
             var instance1 = NaiveSingleton.Instance;
             var instance2 = NaiveSingleton.Instance;
+
             Console.WriteLine(instance1 == instance2);
         }
 
