@@ -1,10 +1,10 @@
 ﻿namespace Factory.FactoryMethod
 {
-    public class ShipCreator : TransportCreator
+    public class TruckCreator : TransportCreator
     {
         public override ITransport CreateTransport(float capacity, string name)
         {
-            var ship = new Ship
+            var truck = new Truck
             {
                 Capacity = capacity,
                 Name = name
@@ -12,7 +12,7 @@
 
             _counter++;
 
-            return ship;
+            return truck;
         }
     }
 }

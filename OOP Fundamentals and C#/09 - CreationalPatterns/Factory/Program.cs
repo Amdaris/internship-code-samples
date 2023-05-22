@@ -2,8 +2,6 @@
 using Factory.FactoryMethod;
 using Factory.SimpleFactory;
 using System;
-using System.Collections.Generic;
-using System.Xml.Linq;
 
 namespace Factory
 {
@@ -38,14 +36,14 @@ namespace Factory
             //lets the subclasses decide wich class will instantiate
             /////////////////
 
-            ITransportFactory shipFactory = new ShipFactory();
-            ITransportFactory truckFactory = new TruckFactory();
-            ITransportFactory transporterFactory = new TransporterFactory();
+            TransportCreator shipFactory = new ShipCreator();
+            TransportCreator truckFactory = new TruckCreator();
+            TransportCreator transporterFactory = new TransporterCreator();
 
             truckFactory.DispatchTransport(10);
-            truckFactory.DispatchTransport(100);
             shipFactory.DispatchTransport(30);
             transporterFactory.DispatchTransport(100);
+            truckFactory.DispatchTransport(100);
 
             Console.ReadLine();
 
