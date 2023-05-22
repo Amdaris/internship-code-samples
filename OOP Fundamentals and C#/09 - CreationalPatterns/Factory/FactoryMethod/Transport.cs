@@ -5,12 +5,11 @@
         public string Name { get; set; }
         public float Capacity { get; set; }
 
-        private static int _counter;
-        public static int Counter { get { return _counter; } }
+        public static int Counter { get; private set; }
 
         public Transport()
         {
-            _counter++;
+            Counter++;
         }
 
         public abstract bool CheckDeliveryPermission();
