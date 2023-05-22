@@ -1,14 +1,12 @@
 ﻿namespace Factory.FactoryMethod
 {
-    internal class TransporterCreator : TransportCreator
+    internal class VehicleCreator : TransportCreator
     {
-        public override ITransport CreateTransport(float capacity, string name)
+        public override Transport CreateTransport(float capacity, string name)
         {
-            ITransport transport;
-
             if (capacity > 25)
             {
-                transport = new Ship
+                return new Ship
                 {
                     Capacity = capacity,
                     Name = name
@@ -16,16 +14,12 @@
             }
             else
             {
-                transport = new Truck
+                return new Truck
                 {
                     Capacity = capacity,
                     Name = name
                 };
             }
-
-            _counter++;
-
-            return transport;
         }
     }
 }

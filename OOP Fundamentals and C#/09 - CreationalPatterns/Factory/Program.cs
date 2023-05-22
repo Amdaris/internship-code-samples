@@ -38,7 +38,7 @@ namespace Factory
 
             TransportCreator shipFactory = new ShipCreator();
             TransportCreator truckFactory = new TruckCreator();
-            TransportCreator transporterFactory = new TransporterCreator();
+            TransportCreator transporterFactory = new VehicleCreator();
 
             truckFactory.DispatchTransport(10);
             shipFactory.DispatchTransport(30);

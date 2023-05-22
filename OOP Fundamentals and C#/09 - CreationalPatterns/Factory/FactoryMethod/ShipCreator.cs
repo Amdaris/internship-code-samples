@@ -2,17 +2,13 @@
 {
     public class ShipCreator : TransportCreator
     {
-        public override ITransport CreateTransport(float capacity, string name)
+        public override Transport CreateTransport(float capacity, string name)
         {
-            var ship = new Ship
+            return new Ship
             {
                 Capacity = capacity,
                 Name = name
             };
-
-            _counter++;
-
-            return ship;
         }
     }
 }

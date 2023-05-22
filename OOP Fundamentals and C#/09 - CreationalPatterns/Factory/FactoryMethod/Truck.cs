@@ -3,22 +3,23 @@ using System.Text;
 
 namespace Factory.FactoryMethod
 {
-    public class Truck : ITransport
+    public class Truck : Transport
     {
-        public string Name { get; set; }
-        public float Capacity { get; set; }
+        public Truck() : base()
+        {
+        }
 
-        public bool CheckDeliveryPermission()
+        public override bool CheckDeliveryPermission()
         {
             return this.Capacity <= 25;
         }
 
-        public void Deliver()
+        public override void Deliver()
         {
             Console.WriteLine("I deliver on land.");
         }
 
-        public string GetTransportInformation()
+        public override string GetTransportInformation()
         {
             var sb = new StringBuilder();
             sb.AppendLine($"Truck: {this.Name}");

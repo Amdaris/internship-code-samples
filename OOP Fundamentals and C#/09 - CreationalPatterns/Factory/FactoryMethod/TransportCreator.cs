@@ -4,17 +4,15 @@ namespace Factory.FactoryMethod
 {
     public abstract class TransportCreator
     {
-        protected static int _counter;
-
-        public abstract ITransport CreateTransport(float capacity, string name);
+        public abstract Transport CreateTransport(float capacity, string name);
 
         public void DispatchTransport(float capacity)
         {
-            ITransport transport = CreateTransport(capacity, $"transporter-{_counter}");
+            Transport transport = CreateTransport(capacity, $"transporter-{Transport.Counter}");
 
             if (!transport.CheckDeliveryPermission())
             {
-                Console.WriteLine($"Sorry, missing permission for transporter {transport.Name}\n");
+                Console.WriteLine($"Sorry, missing permission for transporter {transport.Name}");
                 return;
             }
 
