@@ -4,6 +4,9 @@
     {
         string Name { get; set; }
         float Capacity { get; set; }
+
+        bool CheckDeliveryPermission();
         void Deliver();
+        string GetTransportInformation();
     }
 }

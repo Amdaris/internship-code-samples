@@ -40,21 +40,13 @@ namespace Factory
 
             ITransportFactory shipFactory = new ShipFactory();
             ITransportFactory truckFactory = new TruckFactory();
-            
-            ITransport ship = shipFactory.CreateTransport(1000, "ship name");
-            ITransport truck = truckFactory.CreateTransport(10, "truck name");
-            
-            //ship.Deliver();
-            //truck.Deliver();
-            
-            
-            List<ITransport> transports = new List<ITransport> { ship, truck };
-            
-            foreach (var transport in transports)
-            {
-                transport.Deliver();
-            }
-            
+            ITransportFactory transporterFactory = new TransporterFactory();
+
+            truckFactory.DispatchTransport(10);
+            truckFactory.DispatchTransport(100);
+            shipFactory.DispatchTransport(30);
+            transporterFactory.DispatchTransport(100);
+
             Console.ReadLine();
 
 

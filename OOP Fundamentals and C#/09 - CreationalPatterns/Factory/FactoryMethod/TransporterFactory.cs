@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace Factory.FactoryMethod
@@ -20,6 +21,16 @@ namespace Factory.FactoryMethod
                     Capacity = capacity,
                     Name = name
                 };
+        }
+
+        public void DispatchTransport(float capacity)
+        {
+            ITransport transport = CreateTransport(capacity, $"transporter-{Guid.NewGuid()}");
+
+            transport.Deliver();
+
+            var transportInfo = transport.GetTransportInformation();
+            Console.WriteLine(transportInfo);
         }
     }
 }
