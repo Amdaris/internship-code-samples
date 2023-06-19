@@ -2,57 +2,81 @@
 
 namespace ClassDemo
 {
-    class User
+    public class CoffeeMachine
     {
-        private string name;
-        private int balance = 10;
+        public readonly int MaxCoffeeCount = 100;
+        private int _coffeeCount = 0;
 
-        public User(string name, int balance)
+        public CoffeeMachine(string name)
         {
-            this.name = name;
-            this.balance = balance;
+            Name = name;
         }
 
-        public bool TryWithdraw(int amount)
+        public string Name { get; private set; }
+
+        public void MakeCoffee()
         {
-            if (CanWithdraw(amount))
+            if (_coffeeCount >= MaxCoffeeCount)
             {
-                balance -= amount;
-                return true;
+                Console.WriteLine("Coffee machine is full ", Name);
             }
-            return false;
+
+            _coffeeCount += 1;
+
+            Console.WriteLine("Making coffee with {0}", Name);
+
+            Clean();
         }
 
-        public bool CanWithdraw(int amount)
+        protected void Clean()
         {
-            return balance > amount;
-        }
-
-        public override string ToString()
-        {
-            return $"{name}: {balance}";
+            Console.WriteLine("Cleaning {0}", Name);
         }
     }
+
+    class AutomaticCoffeeMachine : CoffeeMachine
+    {
+        public AutomaticCoffeeMachine(string name) : base(name)
+        {
+        }
+
+        public void MakeCappuccino()
+        {
+            MakeCoffee();
+            MakeMilk();
+        }
+
+        public void MakeMilk()
+        {
+            WarmUp();
+
+            Console.WriteLine("Making milk with {0}", Name);
+
+            Clean();
+        }
+
+        private void WarmUp()
+        {
+            Console.WriteLine("Warming up {0}", Name);
+        }
+
+        void DisplayError()
+        {
+
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-            User user = new User("John", 100);
-            bool canWithdraw = user.CanWithdraw(9);
+            CoffeeMachine coffeeMachine = new CoffeeMachine("My Coffee Machine");
+            coffeeMachine.MakeCoffee();
 
-            Console.WriteLine(canWithdraw);
+            Console.WriteLine();
 
-            bool withdrawalSucceeded = user.TryWithdraw(900);
-            if (withdrawalSucceeded)
-            {
-                Console.WriteLine($"User: {user}");
-            }
-            else
-            {
-                Console.WriteLine("Couldn't withdraw");
-            }
-
-            Console.WriteLine(user);
+            AutomaticCoffeeMachine automaticCoffeeMachine = new AutomaticCoffeeMachine("My Automatic Coffee Machine");
+            automaticCoffeeMachine.MakeCappuccino();
         }
     }
 }

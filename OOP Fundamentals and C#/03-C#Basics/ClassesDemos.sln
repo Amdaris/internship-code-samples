@@ -1,17 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31105.61
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33801.468
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassDemo", "ClassDemo\ClassDemo.csproj", "{0D113775-19CB-4A5C-BC43-9998ADEB2B2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassDemo", "ClassDemo\ClassDemo.csproj", "{0D113775-19CB-4A5C-BC43-9998ADEB2B2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertyDemo", "PropertyDemo\PropertyDemo.csproj", "{9CECB87F-45D2-42B8-AF7E-0CEB42E4B589}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PropertyDemo", "PropertyDemo\PropertyDemo.csproj", "{9CECB87F-45D2-42B8-AF7E-0CEB42E4B589}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConstructorDemo", "ConstructorDemo\ConstructorDemo.csproj", "{0F3E2129-E25D-4773-8BFE-9C71BED23A63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConstructorDemo", "ConstructorDemo\ConstructorDemo.csproj", "{0F3E2129-E25D-4773-8BFE-9C71BED23A63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OverloadingDemo", "OverloadingDemo\OverloadingDemo.csproj", "{B2AE3FF1-871F-4FDC-971D-1038B0AD1E2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OverloadingDemo", "OverloadingDemo\OverloadingDemo.csproj", "{B2AE3FF1-871F-4FDC-971D-1038B0AD1E2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InheritanceDemo", "InheritanceDemo\InheritanceDemo.csproj", "{F61E5919-13DA-4CAE-BA20-AB75C69015D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InheritanceDemo", "InheritanceDemo\InheritanceDemo.csproj", "{F61E5919-13DA-4CAE-BA20-AB75C69015D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
