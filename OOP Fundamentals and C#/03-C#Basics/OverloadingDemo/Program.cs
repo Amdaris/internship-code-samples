@@ -2,35 +2,31 @@
 
 namespace OverloadingDemo
 {
-    class Calculator
+    public class EmailService
     {
-
-        public int Calculate(params int[] a)
+        public void SendEmail(string to, string subject, string body)
         {
-            int sum = 10;
-            foreach (int i in a)
-            {
-                sum += i;
-            }
-            return sum;
-        }
-        public int Calculate(int a)
-        {
-            return a;
+            Console.WriteLine("Sending email");
         }
 
-        public int Calculate(int a, int b)
+        public void SendEmail(string to, string subject, object image)
         {
-            return a + b;
+            Console.WriteLine("Sending email with image");
+        }
+
+        public void SendEmail(string to, string cc, string subject, string body)
+        {
+            Console.WriteLine("Sending email with cc");
         }
     }
+
     class Program
     {
         static void Main(string[] args)
         {
-            Calculator c = new Calculator();
-            int s = c.Calculate(1, 2);
-            Console.WriteLine(s);
+            EmailService emailService = new EmailService();
+            emailService.SendEmail("to", "Hello", "Something here");
+            emailService.SendEmail("to", "cc", "Hello", "Something here");
         }
     }
 }
