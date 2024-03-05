@@ -1,5 +1,9 @@
-﻿using System;
+﻿
+#define STAGE
+using System;
+using System.Collections.Generic;
 using System.IO;
+
 
 namespace _05_ExceptionsAndDebugging
 {
@@ -7,7 +11,57 @@ namespace _05_ExceptionsAndDebugging
     {
         static void Main(string[] args)
         {
-            //4
+            //debug
+            var result = CreateUsers();
+
+#if(STAGE)
+            foreach (var user in result)
+            {
+                Console.WriteLine(user);
+            }
+
+#endif
+            // multiple catch
+            PerformArithmetics();
+
+            //finally 
+            WriteToFileExample();
+
+        }
+
+
+        private static IEnumerable<User> CreateUsers()
+        {
+            var allUsers = new List<User>();
+
+            var user1 = new User()
+            {
+                Id = 1,
+                FullName = "Dave Robinson",
+                Email = "dave.robinson@gmail.com",
+                HomeAddress = new Address { Line1 = "Abbey Road Unit 5", City = "London"},
+            };
+
+            var user2 = new User()
+            {
+                Id = 2,
+                FullName = "Riley Walker",
+                Email = "riley.walker@gmail.com",
+                HomeAddress = new Address { Line1 = "Oxford Street", City = "London" },
+            };
+
+
+            Save(user1);
+            Save(user2);
+
+            allUsers.Add(user1);
+            allUsers.Add(user2);
+
+            return allUsers;
+        }
+
+        public static void PerformArithmetics() 
+        {
             try
             {
                 var result = Divide1(2, 0);
@@ -17,16 +71,66 @@ namespace _05_ExceptionsAndDebugging
                 Log(exception);
 
                 // throw exception; NEVER DO THIS! stack trace will be lost
-                
+
                 // throw;  this keeps the stack trace
 
-                throw new ExceptionA("Exception is now an inner exception", exception); // this wraps the initial exception in an inner exception
+               // throw new ExceptionA("The was an error while performing arithmetics", exception); // this wraps the initial exception in an inner exception
             }
             catch (Exception ex)
             {
                 Log(ex);
                 throw;
             }
+        }
+
+
+        public static void WriteToFileExample()
+        {
+            /// v1
+            StreamWriter writer = null;
+
+            try
+            {
+                writer = new StreamWriter("path_to_your_file.txt", true);
+
+                //WriteLine(writer);
+                writer.WriteLine("this might fail");
+
+
+                //do something
+
+            }
+            catch (Exception ex)
+            {
+                // handle exception of type Exception
+            }
+            finally
+            {
+                if (writer != null)
+                    writer.Dispose();
+            }
+
+
+            /// v2
+            using (var writer2 = new StreamWriter("path_to_your_file.txt", true))
+            {
+                writer.WriteLine("this might fail");
+
+                // do something
+            }
+
+
+            /// v3
+            using var writer3 = new StreamWriter("path_to_your_file.txt", true);
+            writer.WriteLine("this might fail");
+
+            // do something
+
+        }
+
+        private static void WriteLine(StreamWriter writer)
+        {
+            throw new Exception("Error writing in the file");
         }
 
         private static void Log(Exception exception)
@@ -44,7 +148,7 @@ namespace _05_ExceptionsAndDebugging
             return result;
         }
 
-        public void Save2(User user)
+        public static void Save(User user)
         {
             if (user == null)
                 throw new ArgumentNullException("User is null");
@@ -52,54 +156,8 @@ namespace _05_ExceptionsAndDebugging
             // More code
         }
 
-        public void ExceptionsExample3()
-        {
-            try
-            {
-                // some code here
-            }
-            catch (ExceptionA exception)
-            {
-                // handle exception of type ExceptionA
-            }
-            catch (ExceptionB exception)
-            {
-                // handle exception of type ExceptionB
-            }
-            finally
-            {
-                // clean up code
-            }
-        }
+      
 
-        public void Finally5()
-        {
-            /// v1
-            Stream file = null;
-
-            try
-            {
-                file = File.Open("my file name", FileMode.Append);
-                //do something
-            }
-            finally
-            {
-                if (file != null)
-                    file.Dispose();
-            }
-
-
-            /// v2
-            using (var file2 = File.Open("", FileMode.Create))
-            {
-                // do something
-            }
-
-
-            /// v3
-            using var file3 = File.Open("", FileMode.Create);
-            // do something
-
-        }
+       
     }
 }
